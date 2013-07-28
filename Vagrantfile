@@ -14,9 +14,7 @@ class IPPool
   end
 
   def append_node(config)
-    ip = get_ip
-    puts "Assigning #{ip}"
-    config.vm.network :private_network, ip: ip
+    config.vm.network :private_network, ip: get_ip
   end
 
   private
@@ -61,10 +59,10 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  (0...1).each do |i|
-    config.vm.define :"duddet-#{i}" do |config|
-      ip_pool.append_node(config)
-      config.vm.hostname = "duddet-#{i}"
-    end
-  end
+  # (0...1).each do |i|
+  #   config.vm.define :"duddet-#{i}" do |config|
+  #     ip_pool.append_node(config)
+  #     config.vm.hostname = "duddet-#{i}"
+  #   end
+  # end
 end
