@@ -1,0 +1,12 @@
+#!/bin/bash
+
+case "$1" in
+"build")
+	cd ~/images/$2
+	docker build -t $2 .
+	docker tag $2 <%= docker_repository_host %>:<%= docker_repository_port %>/$2
+	;;
+*)
+	echo "Unknown command: $1"
+	;;
+esac

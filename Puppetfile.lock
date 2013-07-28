@@ -1,0 +1,33 @@
+FORGE
+  remote: http://forge.puppetlabs.com
+  specs:
+    puppetlabs/apt (1.2.0)
+      puppetlabs/stdlib (>= 2.2.1)
+    puppetlabs/stdlib (4.1.0)
+
+GIT
+  remote: git://github.com/nesi/puppet-git.git
+  ref: master
+  sha: 9d7b47b44fab8e3420e5320f67db5207191eac7c
+  specs:
+    git (0.0.1)
+
+GIT
+  remote: git://github.com/sevos/garethr-docker.git
+  ref: master
+  sha: cf88967a233cf5e612bb8c3fd0f9d1e352287ccf
+  specs:
+    docker (0.4.1)
+      puppetlabs/apt (>= 1.1.0)
+      puppetlabs/stdlib (>= 4.1.0)
+
+PATH
+  remote: custom_modules/duddet
+  specs:
+    duddet (0.0.1)
+
+DEPENDENCIES
+  docker (>= 0)
+  duddet (>= 0)
+  git (>= 0)
+
